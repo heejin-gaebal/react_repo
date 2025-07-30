@@ -10,6 +10,11 @@ const Layout = styled.div`
     height: 30px;
     margin-bottom: 5px;
   }
+
+  & > table {
+    margin: auto;
+    text-align: center;
+  }
 `;
 
 // form태그에 submit 발생하면 input 4개의 값 객체받고 storage에 저장
@@ -18,6 +23,9 @@ const BoardMainPage = () => {
   const [content, setContent] = useState('');
   const [writer, setWriter] = useState('');
   const [category, setCategory] = useState('');
+
+  // dataList에 대한 state 생성!
+  const [dataList, setDataList] = useState([]);
 
   function handleSubmit(evt) {
     evt.preventDefault(); //기본 이벤트 막기
@@ -50,6 +58,13 @@ const BoardMainPage = () => {
   }
   function handleChangeCategory(evt) {
     setCategory(evt.target.value);
+  }
+
+  //////////// 게시글 불러오기 ////////////
+  function loadBoardList() {
+    //storage에서 JSON형식 문자열 얻기
+    const str = localStorage.getItem('voList');
+    setDataList(JSON.parse(str));
   }
 
   return (
@@ -98,12 +113,32 @@ const BoardMainPage = () => {
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <h2>게시글 목록</h2>
+      <button onClick={loadBoardList}>게시글 보기</button>
+      <br />
+      <br />
+
+      <table border={1}>
+        <thead>
+          <tr>
+            <th>제목</th>
+            <th>내용</th>
+            <th>작성자</th>
+            <th>카테고리</th>
+          </tr>
+        </thead>
+        <tbody>
+          {dataList.map((data, idx) => (
+            <tr>
+              <td>{data.title}</td>
+              <td>{data.content}</td>
+              <td>{data.writer}</td>
+              <td>{data.category}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
       <br />
       <br />
       <br />
