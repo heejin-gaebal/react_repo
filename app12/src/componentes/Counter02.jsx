@@ -19,7 +19,7 @@ const Counter02 = () => {
 
   return (
     <Layout>
-      <h2>LSH</h2>
+      <h3>lsh</h3>
       <h1>Counter02</h1>
       <h2>Number : {state}</h2>
 
