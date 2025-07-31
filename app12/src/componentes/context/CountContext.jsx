@@ -1,6 +1,7 @@
 import { createContext, useContext, useReducer, useState } from 'react';
 
 const MyContext = createContext();
+console.log(MyContext);
 
 const MyContextProvider = (props) => {
   const initialState = 999;
