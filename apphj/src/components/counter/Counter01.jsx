@@ -40,7 +40,7 @@ const Counter02 = () => {
           setValue(value * 2);
         }}
       >
-        PLUS
+        x2
       </button>
     </CountDiv>
   );
@@ -56,7 +56,7 @@ const Counter03 = () => {
         onClick={() => {
           setValue(value * 3);
         }}
-      ></button>
+      >x3</button>
     </CountDiv>
   );
 };
