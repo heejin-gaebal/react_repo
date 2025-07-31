@@ -1,14 +1,39 @@
-import { createContext } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 const StrContext = createContext(); //문자열context
 const NumContext = createContext(); //숫자context
 
-const StrContextProvider = () => {
-  return <StrContext.Provider value={kuromi}></StrContext.Provider>;
+const StrContextProvider = ({ children }) => {
+  const [str, setStr] = useState('꾸로미');
+  return (
+    <StrContext.Provider value={[str, setStr]}>{children}</StrContext.Provider>
+  );
 };
 
-const NumContextProvider = () => {
-  return <NumContext.Provider value={123}></NumContext.Provider>;
+const NumContextProvider = ({ children }) => {
+  const [num, setNum] = useState(123);
+  const plus = () => {
+    setNum(num + 1);
+  };
+  const minus = () => {
+    setNum(num - 1);
+  };
+
+  const v = { num, plus, minus };
+  return <NumContext.Provider value={v}>{children}</NumContext.Provider>;
 };
 
-export { StrContextProvider, NumContextProvider };
+const useStrContenxt = () => {
+  return useContext(StrContext);
+};
+
+const useNumContext = () => {
+  return useContext(NumContext);
+};
+
+export {
+  StrContextProvider,
+  NumContextProvider,
+  useStrContenxt,
+  useNumContext,
+};

@@ -1,5 +1,6 @@
 import './App.css';
 import Hello from './components/Hello';
+import World from './components/World';
 import { NumContextProvider, StrContextProvider } from './context/MyContext';
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
     <>
       <NumContextProvider>
         <StrContextProvider>
-          <Hello />
+          <World />
         </StrContextProvider>
       </NumContextProvider>
     </>
