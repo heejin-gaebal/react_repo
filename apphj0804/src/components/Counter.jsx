@@ -1,27 +1,26 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { minus, plus } from '../redux/counter/counterSlice';
+import { plus, minus } from '../redux/counter/counterSlice';
 
 const Counter = () => {
-  const cnt = useSelector((state) => state.counter.cnt); //함수를 넣어서 state가져오기 => cnt : 0
+  const cnt = useSelector((state) => state.counter.cnt);
   const dispatch = useDispatch();
-
   return (
     <>
       <h1>Counter</h1>
-      <h2>CNT : {cnt}</h2>
+      <h2>카운트 : {cnt}</h2>
       <button
         onClick={() => {
           dispatch(plus());
         }}
       >
-        plus
+        플러스
       </button>
       <button
         onClick={() => {
           dispatch(minus());
         }}
       >
-        minus
+        마이너스
       </button>
     </>
   );
