@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Quiz from '../../pages/Quiz';
 
 const StyledAside = styled.aside`
   & > a {
@@ -27,9 +26,9 @@ const StyledAside = styled.aside`
 const Aside = () => {
   return (
     <StyledAside>
-      <Link to={'/start'}>캐릭터테스트</Link>
-      <Link to={'/menu2'}>메뉴 2</Link>
-      <Link to={'/menu3'}>메뉴 3</Link>
+      <Link to={'/start'}>캐릭터 테스트</Link>
+      <Link to={'/menu2'}>쿠로미 팬카페</Link>
+      <Link to={'/menu3'}>쿠로미 굿즈샵</Link>
     </StyledAside>
   );
 };
