@@ -1,17 +1,21 @@
+import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledContent = styled.div`
-  width: 1400px;
-  height: 80%;
+  width: 1200px;
+  height: 92%;
   background-color: #fff;
   padding: 30px;
   margin: auto;
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
 `;
 
 const Content = () => {
   return (
     <StyledContent>
-      <h1>컨텐츠 영역</h1>
+        <Outlet/>
     </StyledContent>
   );
 };

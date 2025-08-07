@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Quiz from '../../pages/Quiz';
 
 const StyledAside = styled.aside`
   & > a {
@@ -7,13 +8,18 @@ const StyledAside = styled.aside`
     color: #000;
     padding: 30px;
     width: 200px;
-    border: 1px solid #000;
+    border: 3px solid #fff;
     border-radius: 50px;
     box-sizing: border-box;
     text-align: center;
+    background: #f5eaff;
+    font-size: 20px;
+    font-weight: 600;
+    transition: ease-in-out 0.2s;
 
     &:hover {
-      background-color: #fcd1d1;
+      color: #fff;
+      background-color: #d09cff;
     }
   }
 `;
@@ -21,7 +27,7 @@ const StyledAside = styled.aside`
 const Aside = () => {
   return (
     <StyledAside>
-      <Link to={'/menu1'}>메뉴 1</Link>
+      <Link to={'/start'}>캐릭터테스트</Link>
       <Link to={'/menu2'}>메뉴 2</Link>
       <Link to={'/menu3'}>메뉴 3</Link>
     </StyledAside>

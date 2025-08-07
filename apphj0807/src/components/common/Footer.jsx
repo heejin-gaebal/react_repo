@@ -4,13 +4,13 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #dfdfdf;
+  background: #ebebeb;
 `;
 
 const Footer = () => {
   return (
     <StyledFooter>
-      <footer>푸터영역</footer>
+      <footer>copyright &copy; all rights reserved SANRIO CHARACTERS</footer>
     </StyledFooter>
   );
 };
