@@ -9,7 +9,7 @@ const StyledGoods = styled.div`
   justify-content: center;
   align-items: center;
 
-  & .start{
+  & .start {
     display: block;
     text-decoration: none;
     font-size: 40px;
@@ -19,9 +19,9 @@ const StyledGoods = styled.div`
     color: #7f2fc7;
     padding: 30px 40px;
     transition: ease-in-out 0.2s;
-    &:hover{
+    &:hover {
       color: #fff;
-    background-color: #d09cff;
+      background-color: #d09cff;
     }
   }
 `;
@@ -30,10 +30,15 @@ const GoodsShop = () => {
   return (
     <StyledGoods>
       <div>
-        <img src="https://lh6.googleusercontent.com/proxy/_inY1793ghjPGi4bFRVCiPh4lnk3r39enUHl8dYxuPeT3RsjlSQ8m0KrfDGdu-KMRPNUE4HFjhkwd2QbyVoFZAOSuVZHKnnZRRrDFCo2LVc7n2MZmP8" alt="" />
-        <Link className='start' to={""}>굿즈샵 방문하기</Link>
+        <img
+          src="https://item.kakaocdn.net/do/bea5ff9ff37fba97b062788704a4e04ef43ad912ad8dd55b04db6a64cddaf76d"
+          alt=""
+        />
+        <Link className="start" to={''}>
+          산리오 굿즈샵 방문하기
+        </Link>
       </div>
-      <Outlet/>
+      <Outlet />
     </StyledGoods>
   );
 };
