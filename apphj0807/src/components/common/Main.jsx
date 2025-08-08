@@ -24,7 +24,7 @@ const StyledMain = styled.main`
     justify-content: center;
     align-items: center;
   }
-  & img{
+  & img {
     width: -webkit-fill-available;
     height: -webkit-fill-available;
     object-fit: cover;
@@ -37,11 +37,19 @@ const Main = () => {
       <Aside />
       <Routes>
         <Route path="*" element={<Content />}>
-          <Route path='*' element={<img src="https://cdn.wallpapersafari.com/56/1/EFG6Hj.png" alt="bg" />}></Route>
-          <Route path="start" element={<StartPage/>} />
-          <Route path="start/quiz" element={<Quiz/>} />
-          <Route path="menu2" element={<FanCafe/>}/>
-          <Route path="menu3" element={<GoodsShop/>}/>
+          <Route
+            path="*"
+            element={
+              <img
+                src="https://cdn.wallpapersafari.com/56/1/EFG6Hj.png"
+                alt="bg"
+              />
+            }
+          />
+          <Route path="start" element={<StartPage />} />
+          <Route path="start/quiz" element={<Quiz />} />
+          <Route path="menu2" element={<FanCafe />} />
+          <Route path="menu3" element={<GoodsShop />} />
         </Route>
       </Routes>
     </StyledMain>
