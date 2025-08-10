@@ -37,15 +37,7 @@ const Main = () => {
       <Aside />
       <Routes>
         <Route path="*" element={<Content />}>
-          <Route
-            path="*"
-            element={
-              <img
-                src="https://cdn.wallpapersafari.com/56/1/EFG6Hj.png"
-                alt="bg"
-              />
-            }
-          />
+          <Route path="*" element={<img src="https://cdn.wallpapersafari.com/56/1/EFG6Hj.png" alt="bg"/>}/>
           <Route path="start" element={<StartPage />} />
           <Route path="start/quiz" element={<Quiz />} />
           <Route path="menu2" element={<FanCafe />} />
