@@ -8,6 +8,12 @@ const LayoutNav = styled('nav')`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background-color: ${(props) => {
+    return props.theme.palette.primary.light;
+  }}; //mui의 테마 팔레트 사용
+  color: ${(props) => {
+    return props.theme.palette.primary.contrastText;
+  }};
 `;
 
 const Nav = () => {
