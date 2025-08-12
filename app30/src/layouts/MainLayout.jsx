@@ -8,7 +8,6 @@ import Footer from '../components/common/Footer';
 const LayoutDiv = styled('div')`
   width: 100vw;
   min-height: 100vh;
-  background-color: #cef1f7;
   display: grid;
   grid-template-rows: var(--header-height) var(--nav-height) 1fr var(
       --footer-height
@@ -28,9 +27,17 @@ const MainLayout = () => {
       <Header />
       <Nav />
       <MiddleDiv>
-        <Aside />
+        <Aside
+          adUrl={
+            'https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjZfNTkg/MDAxNTk1NzU5OTc3MzIw.3P8EubS_N56pRxRKhg_5LVcTfhbLv0r945KhOxLKsHQg.r8btHRPx4Rl_Ld1XZRvIjdO_mr8kKty99gl74g0phCcg.PNG.lastmistake/%EC%BF%A0%EB%A1%9C%EB%AF%B83.png?type=w800'
+          }
+        />
         <Main />
-        <Aside />
+        <Aside
+          adUrl={
+            'https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjZfNTkg/MDAxNTk1NzU5OTc3MzIw.3P8EubS_N56pRxRKhg_5LVcTfhbLv0r945KhOxLKsHQg.r8btHRPx4Rl_Ld1XZRvIjdO_mr8kKty99gl74g0phCcg.PNG.lastmistake/%EC%BF%A0%EB%A1%9C%EB%AF%B83.png?type=w800'
+          }
+        />
       </MiddleDiv>
       <Footer />
     </LayoutDiv>
