@@ -2,12 +2,23 @@ import { Link } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import NavItem from './NavItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectBoard, selectGallery, selectNotice } from '../../redux/navSlice';
+import {
+  selectBoard,
+  selectGallery,
+  selectNotice,
+  selectMember,
+} from '../../redux/navSlice';
 
 const LayoutNav = styled('nav')`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background-color: ${(props) => {
+    return props.theme.palette.primary.light;
+  }}; //mui의 테마 팔레트 사용
+  color: ${(props) => {
+    return props.theme.palette.primary.contrastText;
+  }};
 `;
 
 const Nav = () => {
@@ -48,6 +59,16 @@ const Nav = () => {
             }}
           >
             Gallery
+          </Link>
+        </NavItem>
+        <NavItem isSelected={itemName === 'member'}>
+          <Link
+            to={'/member/mypage'}
+            onClick={() => {
+              dispatch(selectMember());
+            }}
+          >
+            Member
           </Link>
         </NavItem>
       </LayoutNav>

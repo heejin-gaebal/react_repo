@@ -3,6 +3,7 @@ import Switch from '@mui/material/Switch';
 import ThemeSwitch from '../util/ThemeSwitch';
 import { useDispatch } from 'react-redux';
 import { toggleTheme } from '../../redux/themeSlice';
+import { useNavigate } from 'react-router-dom';
 
 const LayoutDiv = styled('div')`
   display: grid;
@@ -16,6 +17,7 @@ const LayoutDiv = styled('div')`
 
 const Header = () => {
   const dispatch = useDispatch();
+  const navi = useNavigate();
 
   return (
     <LayoutDiv>
@@ -23,7 +25,13 @@ const Header = () => {
         <div className="jelly-box"></div>
         <div className="jelly-box-shadow"></div>
       </div>
-      <h1 className="glow">WELCOME</h1>
+      <div
+        onClick={() => {
+          navi('/');
+        }}
+      >
+        <h1 className="glow">WELCOME</h1>
+      </div>
       <ThemeSwitch
         onClick={() => {
           dispatch(toggleTheme());

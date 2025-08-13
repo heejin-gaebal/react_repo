@@ -13,8 +13,12 @@ const navSlice = createSlice({
     selectGallery: (state, action) => {
       state.itemName = 'gallery';
     },
+    selectMember: (state, action) => {
+      state.itemName = 'member';
+    },
   },
 });
 
-export const { selectBoard, selectNotice, selectGallery } = navSlice.actions;
+export const { selectBoard, selectNotice, selectGallery, selectMember } =
+  navSlice.actions;
 export default navSlice.reducer;

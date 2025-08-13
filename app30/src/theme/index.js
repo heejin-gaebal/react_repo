@@ -1,16 +1,11 @@
 import { createTheme } from '@mui/material/styles';
+import { paletteDark, paletteLight } from './palette';
 
 const ligntTheme = createTheme({
-  palette: {
-    kh: {},
-  },
+  palette: paletteLight,
 });
 const darkTheme = createTheme({
-  palette: {
-    primary: {
-      main: '#000',
-    },
-  },
+  palette: paletteDark,
 });
 
 export { ligntTheme, darkTheme };
