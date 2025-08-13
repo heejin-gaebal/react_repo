@@ -4,6 +4,11 @@ import BoardList from '../board/BoardList';
 import BoardInsert from '../board/BoardInsert';
 import NoticeList from '../notice/NoticeList';
 import NoticeInsert from '../notice/NoticeInsert';
+import MemberMypage from '../member/MemberMypage';
+import MemberLayout from '../member/MemberLayout';
+import MemberJoin from '../member/MemberJoin';
+import MemberLogin from '../member/MemberLogin';
+import Home from '../Home';
 
 const LayoutMain = styled('main')`
   display: flex;
@@ -11,7 +16,7 @@ const LayoutMain = styled('main')`
   align-items: center;
   padding: 50px;
   background-color: ${({ theme }) => {
-    return theme.palette.kh.main;
+    return theme.palette.kh.light;
   }};
   color: ${({ theme }) => {
     return theme.palette.kh.contrastText;
@@ -26,7 +31,12 @@ const Main = () => {
         <Route path="/board/insert" element={<BoardInsert />} />
         <Route path="/notice/list" element={<NoticeList />} />
         <Route path="/notice/insert" element={<NoticeInsert />} />
-        <Route path="*" element={<h1>home</h1>} />
+        <Route path="/member" element={<MemberLayout />}>
+          <Route path="join" element={<MemberJoin />} />
+          <Route path="login" element={<MemberLogin />} />
+          <Route path="mypage" element={<MemberMypage />} />
+        </Route>
+        <Route path="*" element={<Home />} />
       </Routes>
     </LayoutMain>
   );

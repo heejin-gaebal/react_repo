@@ -11,7 +11,7 @@ function useFormDate(initState) {
     });
   };
 
-  return { formData, handleChange };
+  return { formData, handleChange, setFormData };
 }
 
 export default useFormDate;
