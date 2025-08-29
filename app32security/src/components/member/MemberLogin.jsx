@@ -19,6 +19,30 @@ const MemberLogin = () => {
       const accessToken = value.split(' ')[1];
       localStorage.setItem('accessToken', accessToken); //토큰을 저장
     });
+  } //폼
+
+  function callUserApi() {
+    const token = localStorage.getItem('accessToken');
+    const url = 'http://127.0.0.1:8080/api/test/user';
+    const option = {
+      //get 방식이라 method|body 생략
+      headers: {
+        Authorization: 'Bearer ' + token,
+      },
+    };
+    fetch(url, option);
+  }
+
+  function callAdminApi() {
+    const token = localStorage.getItem('accessToken');
+    const url = 'http://127.0.0.1:8080/api/test/admin';
+    const option = {
+      //get 방식이라 method|body 생략
+      headers: {
+        Authorization: 'Bearer ' + token,
+      },
+    };
+    fetch(url, option);
   }
 
   return (
@@ -30,6 +54,9 @@ const MemberLogin = () => {
         <br />
         <input type="submit" value="LOGIN" />
       </form>
+      <hr />
+      <button onClick={callUserApi}>call User API</button> <br />
+      <button onClick={callAdminApi}>call Admin API</button>
     </>
   );
 };
