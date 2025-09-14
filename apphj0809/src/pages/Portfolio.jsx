@@ -19,6 +19,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
+import PinInvokeRoundedIcon from '@mui/icons-material/PinInvokeRounded';
 
 const StyledLayout = styled("div")`
   width: 100%;
@@ -48,7 +49,6 @@ const StyledLayout = styled("div")`
   .myInfo{
     transform: translateY(50px); opacity: 0;
     transition: transform 0.8s ease-out, opacity 0.8s ease-out; text-align: center;
-    
     &.up {
         transform: translateY(0); opacity: 1;
     }
@@ -59,6 +59,13 @@ const StyledLayout = styled("div")`
       &.left{text-align:left;}
       &.right{text-align:right;}
       span{color:#000; border-bottom: 2px dashed #000; font-weight: 600;}
+    }
+    a{
+      text-decoration:none; font-weight: 600;
+      font-size: 20px; color: #0a345d;
+      &:hover{
+        text-decoration:underline #0a345d;
+      }
     }
   }
   .my_skill{
@@ -281,6 +288,7 @@ const Portfolio = () => {
           <div className={`myInfo ${animate ? 'up' : ''}`}>
             <h1 className="left">소통하며 배우고, 강단있게 성장하는<h1 className="right"><span>박희진</span>입니다.</h1></h1>
             <img src={myImage} alt="박희진" />
+            <Link to="https://www.notion.so/KH-1c86bd250d6780c9af81c4e0e0f9923b" target="_blank">My Notion<PinInvokeRoundedIcon/></Link>
           </div>
           <div className={`my_skill ${animate ? 'down' : ''}`}>
             <div>
