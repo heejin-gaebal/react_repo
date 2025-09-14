@@ -3,6 +3,17 @@ import { Link } from "react-router-dom";
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import { useState, useEffect } from 'react';
 import myImage from '../images/heejin.png';
+import career01 from '../images/career01.png';
+import career02 from '../images/career02.png';
+import career03 from '../images/career03.png';
+import career04 from '../images/career04.png';
+import career05 from '../images/career05.png';
+import career06 from '../images/career06.png';
+import semi01 from '../images/semi01.png';
+import semi02 from '../images/semi02.png';
+import semi03 from '../images/semi03.png';
+import semi04 from '../images/semi04.png';
+import semi05 from '../images/semi05.png';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -108,7 +119,6 @@ const Intro = styled("div")`
       opacity: 1;
       transform: translateY(0);
     }
-
     h2{
       margin: 0;
     }
@@ -135,6 +145,45 @@ const Career = styled("div")`
       font-size: 18px;
     }
     .css-1usuzwp-MuiButtonBase-root-MuiTab-root.Mui-selected{font-weight: 600;}
+  }
+  .css-19kzrtu {
+      padding: 20px 0;
+  }
+  .projectWrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 50px 20px;
+    .projectBox{
+      width: 32%;
+      border-radius: 10px;
+      text-align: center;
+      img{
+          width : -webkit-fill-available;
+        }
+      p{
+        margin: 0;
+      }
+      .btn{
+        width: 100%;
+        padding: 10px 20px;
+        margin-top: 10px;
+        background: #75ade9;
+        border: 1px solid #dcdcdc;
+        border-radius: 5px;
+        transition: ease-in-out 0.2s;
+        a{
+          text-decoration: none;
+          color: #000;
+          width: 100%;
+          display: inline-block;
+        }
+        &:hover{
+          background: #fff;
+          border: 1px solid #4399f5;
+        }
+      }
+    }
   }
 `
 function CustomTabPanel(props) {
@@ -207,7 +256,6 @@ const Portfolio = () => {
         <div className="contentsWrap">
           <div className={`myInfo ${animate ? 'up' : ''}`}>
             <h1 className="left">소통하며 배우고, 강단있게 성장하는<h1 className="right"><span>박희진</span>입니다.</h1></h1>
-            
             <img src={myImage} alt="박희진" />
           </div>
           <div className={`my_skill ${animate ? 'down' : ''}`}>
@@ -336,9 +384,9 @@ const Portfolio = () => {
         </div>
       </Intro>
       <Career>
-        <h1>Career</h1>
         <div className="CareerWrap">
           <Box sx={{ width: '1050px; margin:auto; ' }}>
+          <h1>Career</h1>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <Tabs className="tapWrap" value={value} onChange={handleChange} aria-label="basic tabs example">
                 <Tab className="tablist" label="Company" {...a11yProps(0)} />
@@ -348,39 +396,71 @@ const Portfolio = () => {
             <CustomTabPanel value={value} index={0}>
               <div className="projectWrap">
                 <div className="projectBox">
-                  <img src="" alt="이미지" /><br/>
-                  <span>프로젝트 명 : 금융위원회 인허가등록신고시스템</span>
+                  <img src={career01} alt="career01" />
+                  <span>프로젝트 명 : <strong>금융위원회 인허가등록신고시스템</strong></span>
                   <p><span>퍼블리싱 기여도 : </span><strong>100%</strong></p>
+                  <button className="btn"><Link to="https://www.fcsc.kr/ucms/main/main.do" target="_blank">자세히 보기</Link></button>
                 </div>
                 <div className="projectBox">
-                  <img src="" alt="이미지" /><br/>
-                  <span>프로젝트 명 : KAB인정지원센터</span>
+                  <img src={career02} alt="career02" />
+                  <span>프로젝트 명 : <strong>KAB인정지원센터</strong></span>
                   <p><span>퍼블리싱 기여도 : </span><strong>100%</strong></p>
+                  <button className="btn"><Link to="https://www.kab.or.kr/kor/main/main.do" target="_blank">자세히 보기</Link></button>
                 </div>
                 <div className="projectBox">
-                  <img src="" alt="이미지" /><br/>
-                  <span>프로젝트 명 : SJTechnology</span>
+                  <img src={career03} alt="career03" />
+                  <span>프로젝트 명 : <strong>SJTechnology</strong></span>
                   <p><span>퍼블리싱 기여도 : </span><strong>100%</strong></p>
+                  <button className="btn"><Link to="http://www.sjtn.co.kr/" target="_blank">자세히 보기</Link></button>
                 </div>
                 <div className="projectBox">
-                  <img src="" alt="이미지" /><br/>
-                  <span>프로젝트 명 : W브릿지</span>
-                  <p><span>퍼블리싱 기여도 : </span><strong>50%</strong></p>
-                </div>
-                <div className="projectBox">
-                  <img src="" alt="이미지" /><br/>
-                  <span>프로젝트 명 : 힌츠페터 국제보도상</span>
+                  <img src={career04} alt="career04" />
+                  <span>프로젝트 명 : <strong>힌츠페터 국제보도상</strong></span>
                   <p><span>퍼블리싱 기여도 : </span><strong>80%</strong></p>
+                  <button className="btn"><Link to="https://www.hinzpeterawards.com/main/main.do" target="_blank">자세히 보기</Link></button>
                 </div>
                 <div className="projectBox">
-                  <img src="" alt="이미지" /><br/>
-                  <span>프로젝트 명 : 전통공연예술진흥재단</span>
+                  <img src={career05} alt="career05" />
+                  <span>프로젝트 명 : <strong>W브릿지</strong></span>
                   <p><span>퍼블리싱 기여도 : </span><strong>50%</strong></p>
+                  <button className="btn"><Link to="https://www.wbridge.or.kr/" target="_blank">자세히 보기</Link></button>
+                </div>
+                <div className="projectBox">
+                  <img src={career06} alt="career06" />
+                  <span>프로젝트 명 : <strong>전통공연예술진흥재단</strong></span>
+                  <p><span>퍼블리싱 기여도 : </span><strong>50%</strong></p>
+                  <button className="btn"><Link to="https://kotpa.org/ucms/main/indexmain.do" target="_blank">자세히 보기</Link></button>
                 </div>
               </div>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-              Item Two
+              <h2>SEMI PROJECT</h2>
+              <p>
+                사내 ERP시스템 구현을 목표로 기획부터 UI설계 웹개발까지 이룬 세미프로젝트입니다.<br/>
+                ERD Cloud, Figma, IntelliJ를 이용해서 SpringBoot로 개발완료했습니다.
+              </p>
+              <div className="projectWrap" sx={{display: 'flex', justifyContent: 'center'}}>
+                <div className="projectBox">
+                  <img src={semi01} alt="semi01" />
+                  <strong>01 UseCase</strong>
+                </div>
+                <div className="projectBox">
+                  <img src={semi02} alt="semi02" />
+                  <strong>02 Class Diagram</strong>
+                </div>
+                <div className="projectBox">
+                  <img src={semi03} alt="semi03" />
+                  <strong>03 ERD</strong>
+                </div>
+                <div className="projectBox">
+                  <img src={semi04} alt="semi04" />
+                  <strong>04 UI Design</strong>
+                </div>
+                <div className="projectBox">
+                  <img src={semi05} alt="semi05" />
+                  <strong>05 UI Design</strong>
+                </div>
+              </div>
             </CustomTabPanel>
           </Box>
         </div>
