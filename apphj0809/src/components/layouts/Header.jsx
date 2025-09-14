@@ -39,7 +39,7 @@ const Header = ({ onToggleSidebar, sidebarOpen }) => {
         {sidebarOpen ? '닫기' : '메뉴보기'}
       </button>
       <h1> <Link to={"/main"}>heezy's Home</Link></h1>
-      <button className="logout"><Link to={"http://localhost:3000/"}>메인</Link></button>
+      <button className="logout"><Link to={"http://localhost:3000"}>메인</Link></button>
     </StyledHeader>
   );
 };
