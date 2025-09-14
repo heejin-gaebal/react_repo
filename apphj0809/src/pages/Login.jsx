@@ -1,4 +1,5 @@
 import { styled } from "@mui/material/styles";
+import { Link } from "react-router-dom";
 import MyBtn from "../components/common/MyBtn";
 import MyInput from "../components/common/MyInput";
 import { useState } from "react";
@@ -57,7 +58,7 @@ const Login = () => {
       setIsLoading(false);
       Swal.fire("로그인 완료!");
       navi('/main');
-    }, 3000);
+    }, 1000);
   }
   
   //input값
@@ -72,7 +73,8 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <MyInput type="text" name="id" placeholder="아이디 입력" onChange={handleChange}/>
           <MyInput type="password" name="password" placeholder="패스워드 입력"  onChange={handleChange}/>
-          <MyBtn type="submit">로그인</MyBtn>
+          <MyBtn type="submit">로그인</MyBtn><br/><br/>
+          <Link to="/"><MyBtn>이전</MyBtn></Link>
           {isLoading ? <MySpin/> : false}
         </form>
       </div>

@@ -35,13 +35,14 @@ const StyledDiary = styled('div')`
 `
 const DiaryList = () => {
   const navi = useNavigate();
-
   const [diaryList, setDiaryList] = useState([]);
-  const str = localStorage.getItem('diaryList');
-  const temp = JSON.parse(str);
 
   useEffect(()=>{
-    setDiaryList(temp);
+    const str = localStorage.getItem('diaryList');
+    if(str){
+      const temp = JSON.parse(str);
+      setDiaryList(temp);
+    }
   },[]);
 
   return (
@@ -64,16 +65,24 @@ const DiaryList = () => {
           </tr>
         </thead>
         <tbody>
-          {diaryList.map((diaryVo, idx)=>{
+          {diaryList.length === 0 ? (
+          <tr>
+            <td colSpan="4" style={{textAlign: 'center', padding: '20px'}}>
+              게시물이 없습니다
+            </td>
+          </tr>
+        ) : (
+          diaryList.map((diaryVo, idx) => {
             return(
-            <tr>
-              <td>{diaryVo.no}</td>
-              <td>{diaryVo.title}</td>
-              <td>{diaryVo.content}</td>
-              <td>{diaryVo.createAt}</td>
-            </tr>
+              <tr key={diaryVo.no || idx}>
+                <td>{diaryVo.no}</td>
+                <td>{diaryVo.title}</td>
+                <td>{diaryVo.content}</td>
+                <td>{diaryVo.createAt}</td>
+              </tr>
             )
-          })}
+          })
+        )}
         </tbody>
       </table>
       <MyBtn onClick={()=>{

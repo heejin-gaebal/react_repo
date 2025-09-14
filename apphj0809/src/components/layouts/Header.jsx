@@ -36,10 +36,10 @@ const Header = ({ onToggleSidebar, sidebarOpen }) => {
   return (
     <StyledHeader>
       <button onClick={onToggleSidebar}>
-        {sidebarOpen ? '닫기' : '사이드'}
+        {sidebarOpen ? '닫기' : '메뉴보기'}
       </button>
       <h1> <Link to={"/main"}>heezy's Home</Link></h1>
-      <button className="logout"><Link to={"http://localhost:3000/"}>로그아웃</Link></button>
+      <button className="logout"><Link to={"http://localhost:3000/reactbuild"}>로그아웃</Link></button>
     </StyledHeader>
   );
 };

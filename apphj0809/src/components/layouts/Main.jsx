@@ -1,6 +1,5 @@
 import { styled } from "@mui/material/styles";
 import MyProfile from "../MyProfile";
-import MyDashBoard from "../MyDashBoard";
 import { Outlet } from "react-router-dom";
 
 const StyledMain = styled("div")`

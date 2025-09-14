@@ -93,7 +93,7 @@ const MyProfile = () => {
       </div>
       <div className="myInfo">
         <div>
-          <div className="myMent">내 미니홈피 와줘서 고마왕 (●'◡'●) </div>
+          <div className="myMent">내 미니홈피 와줘서 고마워 (●'◡'●) </div>
           <dl>
             <dt>생일</dt>
             <dd>11/30</dd>

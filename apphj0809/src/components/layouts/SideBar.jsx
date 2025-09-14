@@ -36,6 +36,7 @@ const StyledSideBar = styled("div")`
 
     &:hover {background-color: #d6cefc;}
     & > a{text-decoration:none; font-size:18px; 
+      color: #3d2c7b;
       &:active{color: #3d2c7b;}
     }
   }
@@ -63,7 +64,6 @@ const SideBar = ({isOpen, onClose}) => {
       <h2>MY MENU</h2>
       <ul>
         <li><Link to="/main" onClick={onClose}>HOME</Link></li>
-        <li><Link to="/main/diary/list" onClick={onClose}>갤러리</Link></li>
         <li><Link to="/main/diary/list" onClick={onClose}>다이어리 목록</Link></li>
       </ul>
     </StyledSideBar>
