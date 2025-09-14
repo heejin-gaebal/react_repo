@@ -18,6 +18,8 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
+
 const StyledLayout = styled("div")`
   width: 100%;
   height: 100vh;
@@ -131,7 +133,6 @@ const Intro = styled("div")`
     }
   }
 `
-
 const Career = styled("div")`
   width: 100%;
   height: 100vh;
@@ -186,6 +187,29 @@ const Career = styled("div")`
     }
   }
 `
+const BtnTop = styled("p")`
+  position: fixed;
+  right: 4%;
+  width: 48px;
+  bottom: 8%;
+  text-align: center;
+  line-height: 1.2;
+  color: #0a345d;
+  margin: 0px;
+  border: 2px dashed #0a345d;
+  border-radius: 50%;
+  transition: ease-in-out 0.2s;
+  &:hover{
+    bottom: 8.5%;
+  }
+`
+function handleTop(){
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // 부드러운 스크롤 효과
+  });
+}
+
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -465,6 +489,7 @@ const Portfolio = () => {
           </Box>
         </div>
       </Career>
+      <BtnTop onClick={handleTop}><ArrowUpwardRoundedIcon sx={{ fontSize: 40 }}/></BtnTop>
     </>
   );
 };
